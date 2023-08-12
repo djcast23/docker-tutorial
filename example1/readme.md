@@ -30,3 +30,5 @@ RUN chmod +x $APP_HOME/app.py</code>
 <code>CMD ["python3", "app.py"]</code>
 
 Dockerfiles collectively define the building blocks and instructions for creating a container image that encapsulates your application along with its dependencies and configuration. Once the Dockerfile is ready, you can use the docker build command to create the container image, and the resulting image can then be used to run containers with consistent environments across different systems.
+
+# 

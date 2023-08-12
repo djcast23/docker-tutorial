@@ -31,4 +31,21 @@ RUN chmod +x $APP_HOME/app.py</code>
 
 Dockerfiles collectively define the building blocks and instructions for creating a container image that encapsulates your application along with its dependencies and configuration. Once the Dockerfile is ready, you can use the docker build command to create the container image, and the resulting image can then be used to run containers with consistent environments across different systems.
 
-# 
+# Building
+
+To build this example, try the following command:
+<code>docker build -t my-docker-example .</code>
+Breakdown:
+1. <code>docker build</code> - This command is used to build a Docker image from a Dockerfile
+2. <code>-t my-docker-example</code> - This flag specifies the name and an optional tag for the image. The optional tag in question is the version tag, used
+   like "my-docker-example:1.0.0" or "my-docker-example:latest" if deploying your image as a consumer.
+3. <code>.</code> - This specifies the build context, which is the directory containing the Dockerfile and any other files needed. The "." refers to the
+   current directoy.
+
+To run your built image, try the following command:
+<code>docker run -p 8080:80 my-docker-example</code>
+Breakdown:
+1. <code>docker run</code> - This command is used to create and run a container from an existing Docker image.
+2. <code>-p 8080:80</code> - This flag maps a port from the host to a port in the container. In this case, it takes port 80 (from the flask app
+   inside the container) and maps it to port 8080 outside the container making it accessible from http://localhost:8080/.
+3. <code>my-docker-example</code> - This is the name of the docker image you want to create a container from.

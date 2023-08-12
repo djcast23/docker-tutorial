@@ -1,8 +1,8 @@
 ## Dockerfile
 
-```Dockerfile
+
 # Use an official Ubuntu 20.04 image as the base
-FROM ubuntu:20.04
+<code>FROM ubuntu:20.04</code>
 
 # Update package lists and install Python 3
 RUN apt-get update && apt-get install -y python3
